@@ -1,20 +1,26 @@
+import { useState } from "react";
+
 function Panel() {
 	const arr = ['Blizzards', 'Calm', 'Dusty_Road', 'Escape', 'Payday', 'Retreat', 'Seasonal', 'Vespers'];
 	const path = process.env.PUBLIC_URL;
 	const deg = 360/arr.length;	
 	const btnStyle = {position: 'fixed', top:0, left:0}
 	
-	function changeArr(txt){
-		arr[0] = txt;
-		console.log(arr);
+	let [names, setNames] =useState(arr);
+
+	const changeState=()=>{
+		let newArr = [...arr];
+		newArr[0] = 'Escape';
+		setNames(newArr);
 	}
+	
 
 	return (		
 		<>
-			<button style={btnStyle} onClick={()=>changeArr('Escape')}>button</button>
+			<button style={btnStyle} onClick={changeState}>button</button>
 			<section>
 				{
-					arr.map((data,index)=>{	
+					names.map((data,index)=>{	
 						let style = {transform: `rotate(${deg*index}deg) translateY(-100vh)`}	
 						let imgSrc = `${path}/img/${data}.jpg`
 				
