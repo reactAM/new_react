@@ -3,20 +3,14 @@ import { Logo, Menu } from './components/Header.js';
 import Panel from './components/Panel.js';
 import Footer from './components/Footer.js';
 
-
-
 function App() {
 	return (
 		<div className="App">
 			{/* 전체 레이아웃 */}
 			<figure>
 				<Logo />
-				<Menu />
-
-				<section>
-					<Panel />
-				</section>
-
+				<Menu />				
+				<Panel />	
 				<Footer />
 			</figure>
 		</div>

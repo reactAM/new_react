@@ -9,28 +9,30 @@ function Panel() {
 		console.log(arr);
 	}
 
-	return (
+	return (		
 		<>
-		<button style={btnStyle} onClick={()=>changeArr('Escape')}>button</button>
-		{
-			arr.map((data,index)=>{	
-				let style = {transform: `rotate(${deg*index}deg) translateY(-100vh)`}	
-				let imgSrc = `${path}/img/${data}.jpg`
-
-				return (
-					<article key={index} style={style}>
-						<div className="inner">
-							<div className="pic">
-								<img src={imgSrc} />
-							</div>
-
-							<h2>{data}</h2>				
-						</div>
-					</article>
-				)
-			})
-		}
-		</>		
+			<button style={btnStyle} onClick={()=>changeArr('Escape')}>button</button>
+			<section>
+				{
+					arr.map((data,index)=>{	
+						let style = {transform: `rotate(${deg*index}deg) translateY(-100vh)`}	
+						let imgSrc = `${path}/img/${data}.jpg`
+				
+						return (
+							<article key={index} style={style}>
+								<div className="inner">
+									<div className="pic">
+										<img src={imgSrc} />
+									</div>
+				
+									<h2>{data}</h2>				
+								</div>
+							</article>
+						)
+					})
+				}
+			</section>
+		</>				
 	)
 }
 
